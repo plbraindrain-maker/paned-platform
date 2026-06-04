@@ -51,7 +51,7 @@ body{
 .nav a{
   color:white;
   text-decoration:none;
-  margin-left:26px;
+  margin-left:24px;
   font-weight:700;
   font-size:.95rem;
 }
@@ -170,6 +170,55 @@ body{
   color:#dbe4ee;
 }
 
+.portal{
+  background:#ffffff;
+  border-top:1px solid #ddd6cc;
+}
+
+.portal-box{
+  margin-top:28px;
+  max-width:520px;
+  background:#f7f4ef;
+  border:1px solid #ddd6cc;
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 14px 38px rgba(15,23,42,.06);
+}
+
+.portal-box label{
+  display:block;
+  font-weight:800;
+  margin-bottom:8px;
+  color:#1f2933;
+}
+
+.portal-box input{
+  width:100%;
+  padding:14px 16px;
+  border:1px solid #cbd5e1;
+  border-radius:12px;
+  margin-bottom:18px;
+  font-size:.95rem;
+}
+
+.portal-button{
+  width:100%;
+  border:none;
+  border-radius:999px;
+  padding:15px 24px;
+  background:#8c1515;
+  color:white;
+  font-size:.95rem;
+  font-weight:900;
+  cursor:not-allowed;
+}
+
+.portal-note{
+  margin-top:16px;
+  font-size:.85rem;
+  color:#64748b;
+}
+
 .footer{
   padding:32px 7%;
   background:#8c1515;
@@ -189,7 +238,8 @@ body{
   .brand-title{font-size:1.7rem}
   .brand img{width:50px;height:50px}
 }
-  .loader{
+
+.loader{
   position:fixed;
   inset:0;
   background:#8c1515;
@@ -220,36 +270,36 @@ body{
 </head>
 
 <body>
+
 <div class="loader" id="loader">
   <img src="paned-loader.png?v=2" alt="PanED Loading">
 </div>
+
 <header class="header">
   <a class="brand" href="/">
-  <img src="paned-logo.png" alt="PanED Logo">
+    <img src="paned-logo.png" alt="PanED Logo">
 
-  <div>
+    <div>
+      <div class="brand-title">
+        PanED
+      </div>
 
-    <div class="brand-title">
-      PanED
+      <div style="
+        font-size:.72rem;
+        letter-spacing:.18em;
+        font-weight:700;
+        opacity:.88;
+        margin-top:3px;
+      ">
+        BOUNDLESS EDUCATION
+      </div>
     </div>
-
-    <div style="
-      font-size:.72rem;
-      letter-spacing:.18em;
-      font-weight:700;
-      opacity:.88;
-      margin-top:3px;
-    ">
-      BOUNDLESS EDUCATION
-    </div>
-
-  </div>
-
-</a>
+  </a>
 
   <nav class="nav">
     <a href="#courses">101 Series</a>
     <a href="#badge">Digital Badge</a>
+    <a href="#portal">Portal</a>
     <a href="https://panoromics.org/education">PanorOmics Education</a>
   </nav>
 </header>
@@ -268,7 +318,7 @@ body{
 
   <div class="buttons">
     <a class="primary" href="#courses">Explore 101 Courses</a>
-    <a class="secondary" href="https://panoromics.org/education">Institutional Link</a>
+    <a class="secondary" href="#portal">Learner Portal</a>
   </div>
 </section>
 
@@ -301,9 +351,36 @@ body{
   </div>
 </section>
 
+<section class="section portal" id="portal">
+  <h2>PanED Learner Portal</h2>
+
+  <p>
+    The PanED portal will provide secure access to courses, assessments,
+    digital badges, certificates, and future workforce development programs.
+  </p>
+
+  <div class="portal-box">
+    <label>Email</label>
+    <input type="email" placeholder="Enter your email">
+
+    <label>Password</label>
+    <input type="password" placeholder="Enter your password">
+
+    <button class="portal-button">
+      Login Coming Soon
+    </button>
+
+    <p class="portal-note">
+      Secure login, institutional access, and multi-factor authentication
+      will be added in a future release.
+    </p>
+  </div>
+</section>
+
 <footer class="footer">
-  PanED • Omics Sciences Education Platform • <a href="https://panoromics.org">PanorOmics</a>
+  PanED • Boundless Education • <a href="https://panoromics.org">PanorOmics</a>
 </footer>
+
 <script>
 window.addEventListener("load", function(){
   setTimeout(function(){
@@ -311,5 +388,6 @@ window.addEventListener("load", function(){
   }, 900);
 });
 </script>
+
 </body>
 </html>
