@@ -189,11 +189,44 @@ body{
   .brand-title{font-size:1.7rem}
   .brand img{width:50px;height:50px}
 }
+  .loader{
+  position:fixed;
+  inset:0;
+  background:#8c1515;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  transition:opacity .6s ease, visibility .6s ease;
+}
+
+.loader.hide{
+  opacity:0;
+  visibility:hidden;
+}
+
+.loader img{
+  width:96px;
+  height:96px;
+  object-fit:contain;
+  background:white;
+  border-radius:18px;
+  padding:8px;
+  animation:spin 1.4s linear infinite;
+  box-shadow:0 18px 50px rgba(0,0,0,.25);
+}
+
+@keyframes spin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
 </style>
 </head>
 
 <body>
-
+<div class="loader" id="loader">
+  <img src="paned-logo.png" alt="PanED Loading">
+</div>
 <header class="header">
   <a class="brand" href="/">
   <img src="paned-logo.png" alt="PanED Logo">
@@ -275,6 +308,12 @@ body{
 <footer class="footer">
   PanED • Omics Sciences Education Platform • <a href="https://panoromics.org">PanorOmics</a>
 </footer>
-
+<script>
+window.addEventListener("load", function(){
+  setTimeout(function(){
+    document.getElementById("loader").classList.add("hide");
+  }, 900);
+});
+</script>
 </body>
 </html>
