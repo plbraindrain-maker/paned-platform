@@ -22,6 +22,7 @@ body{
   justify-content:space-between;
   align-items:center;
   border-bottom:4px solid #d2b48c;
+  position:relative;
 }
 
 .brand{
@@ -60,6 +61,16 @@ body{
   color:#f6d365;
 }
 
+.menu-toggle{
+  display:none;
+  background:none;
+  border:none;
+  color:white;
+  font-size:2rem;
+  font-weight:900;
+  cursor:pointer;
+}
+
 .hero{
   padding:92px 7% 72px;
   background:#ffffff;
@@ -90,24 +101,27 @@ body{
   margin-bottom:34px;
 }
 
+.buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
 .buttons a{
   display:inline-block;
   padding:15px 28px;
   border-radius:999px;
   text-decoration:none;
   font-weight:800;
-  margin-right:14px;
-}
-
-.primary{
   background:#8c1515;
   color:white;
 }
 
+.primary,
 .secondary{
-  border:1px solid #cbd5e1;
-  color:#1f2933;
-  background:white;
+  background:#8c1515;
+  color:white;
+  border:none;
 }
 
 .section{
@@ -168,6 +182,17 @@ body{
 
 .badge p{
   color:#dbe4ee;
+}
+
+.linkedin-badge{
+  display:inline-block;
+  margin-top:24px;
+  background:#2563eb;
+  color:white;
+  padding:10px 18px;
+  border-radius:999px;
+  font-size:.9rem;
+  font-weight:700;
 }
 
 .portal{
@@ -232,8 +257,45 @@ body{
   font-weight:700;
 }
 
+@media(max-width:900px){
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#8c1515;
+    padding:18px 7%;
+    border-top:1px solid rgba(255,255,255,.18);
+    z-index:1000;
+  }
+
+  .nav.show{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+
+  .nav a{
+    margin-left:0;
+  }
+
+  .buttons{
+    flex-direction:column;
+    gap:16px;
+  }
+
+  .buttons a{
+    width:100%;
+    text-align:center;
+  }
+}
+
 @media(max-width:800px){
-  .nav{display:none}
   .hero{padding-top:70px}
   .brand-title{font-size:1.7rem}
   .brand img{width:50px;height:50px}
@@ -296,12 +358,16 @@ body{
     </div>
   </a>
 
-  <<nav class="nav">
-  <a href="#courses">101 Series</a>
-  <a href="#badge">Digital Badge</a>
-  <a href="https://panoromics.org/education">PanorOmics</a>
-  <a href="#portal">Portal</a>
-</nav>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <nav class="nav" id="navMenu">
+    <a href="#courses">101 Series</a>
+    <a href="#programs">Programs</a>
+    <a href="#all-courses">All Courses</a>
+    <a href="#badge">Digital Badge</a>
+    <a href="https://panoromics.org/education">PanorOmics</a>
+    <a href="#portal">Portal</a>
+  </nav>
 </header>
 
 <section class="hero">
@@ -310,10 +376,10 @@ body{
   <h1>Omics 101 Series<br>for the AI Biology Era</h1>
 
   <p>
-PanED delivers modern, systems-level Omics Sciences education for learners,
-researchers, healthcare professionals, biotechnology teams, and institutions
-seeking accessible training in genomics, transcriptomics, epigenomics,
-proteomics, metabolomics, lipidomics, AI biology, and scientific writing.
+    PanED delivers modern, systems-level Omics Sciences education for learners,
+    researchers, healthcare professionals, biotechnology teams, and institutions
+    seeking accessible training in genomics, transcriptomics, epigenomics,
+    proteomics, metabolomics, lipidomics, AI biology, and scientific writing.
   </p>
 
   <div class="buttons">
@@ -326,9 +392,9 @@ proteomics, metabolomics, lipidomics, AI biology, and scientific writing.
   <h2>PanED 101 Series</h2>
 
   <p>
-Foundational, selective, and professionally structured courses designed
-for modern Omics Sciences education across biotechnology, healthcare,
-academic, and lifelong-learning settings.
+    Foundational, selective, and professionally structured courses designed
+    for modern Omics Sciences education across biotechnology, healthcare,
+    academic, and lifelong-learning settings.
   </p>
 
   <div class="grid">
@@ -341,13 +407,74 @@ academic, and lifelong-learning settings.
   </div>
 </section>
 
+<section class="section" id="programs">
+  <h2>Explore Our Programs</h2>
+
+  <p>
+    Future PanED programs will support learners seeking structured pathways in
+    Omics Sciences, biotechnology, healthcare innovation, and scientific workforce
+    development.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Graduate Certificates</h3>
+      <p>Coming soon.</p>
+    </div>
+
+    <div class="card">
+      <h3>Professional Programs</h3>
+      <p>Coming soon.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="all-courses">
+  <h2>All Courses</h2>
+
+  <p>
+    Stand-alone courses will allow learners to explore individual topics in
+    Omics Sciences, AI biology, computational biology, translational biotechnology,
+    and scientific writing.
+  </p>
+
+  <div class="grid">
+    <div class="card"><h3>Genomics 101</h3><p>Stand-alone course.</p></div>
+    <div class="card"><h3>Transcriptomics 101</h3><p>Stand-alone course.</p></div>
+    <div class="card"><h3>Epigenomics 101</h3><p>Stand-alone course.</p></div>
+    <div class="card"><h3>Proteomics 101</h3><p>Stand-alone course.</p></div>
+    <div class="card"><h3>Metabolomics 101</h3><p>Stand-alone course.</p></div>
+    <div class="card"><h3>Lipidomics 101</h3><p>Stand-alone course.</p></div>
+  </div>
+</section>
+
 <section class="section" id="badge">
   <div class="badge">
+
     <h2>PanED Digital Badge</h2>
+
     <p>
-      Learners will complete structured modules, short assessments, and applied
-      learning checkpoints before earning a PanED digital badge for each 101 course.
+      Learners complete structured modules, short assessments, and applied
+      learning checkpoints before earning a PanED Digital Badge for each
+      completed course.
     </p>
+
+    <p style="margin-top:18px;">
+      Digital badges provide a verifiable record of learning and can be
+      showcased on LinkedIn, digital portfolios, resumes, personal websites,
+      and professional profiles.
+    </p>
+
+    <p style="margin-top:18px;">
+      Demonstrate your commitment to Omics Sciences education, workforce
+      development, lifelong learning, and professional growth across
+      biotechnology, healthcare, pharmaceutical sciences, and research.
+    </p>
+
+    <div class="linkedin-badge">
+      ✓ Share on LinkedIn
+    </div>
+
   </div>
 </section>
 
@@ -387,6 +514,10 @@ window.addEventListener("load", function(){
     document.getElementById("loader").classList.add("hide");
   }, 900);
 });
+
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("show");
+}
 </script>
 
 </body>
