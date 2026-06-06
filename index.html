@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PanED | Omics Sciences Education Platform</title>
+<title>PanorOmics Online | Powered by PanED</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -43,10 +43,18 @@ body{
 }
 
 .brand-title{
-  font-size:2.1rem;
+  font-size:1.75rem;
   font-weight:900;
   line-height:1;
   letter-spacing:-0.04em;
+}
+
+.brand-subtitle{
+  font-size:.72rem;
+  letter-spacing:.16em;
+  font-weight:700;
+  opacity:.9;
+  margin-top:5px;
 }
 
 .nav a{
@@ -57,9 +65,7 @@ body{
   font-size:.95rem;
 }
 
-.nav a:hover{
-  color:#f6d365;
-}
+.nav a:hover{color:#f6d365}
 
 .menu-toggle{
   display:none;
@@ -72,8 +78,8 @@ body{
 }
 
 .hero{
-  padding:92px 7% 72px;
-  background:#ffffff;
+  padding:86px 7% 64px;
+  background:white;
   border-bottom:1px solid #ddd6cc;
 }
 
@@ -86,19 +92,19 @@ body{
 }
 
 .hero h1{
-  font-size:clamp(3rem,6vw,5.2rem);
+  font-size:clamp(3rem,6vw,5.1rem);
   line-height:.94;
   letter-spacing:-.055em;
-  margin-bottom:26px;
-  max-width:980px;
+  margin-bottom:22px;
+  max-width:1050px;
 }
 
 .hero p{
-  max-width:900px;
-  font-size:1.12rem;
+  max-width:920px;
+  font-size:1.1rem;
   line-height:1.75;
   color:#475569;
-  margin-bottom:34px;
+  margin-bottom:32px;
 }
 
 .buttons{
@@ -117,13 +123,6 @@ body{
   color:white;
 }
 
-.primary,
-.secondary{
-  background:#8c1515;
-  color:white;
-  border:none;
-}
-
 .section{
   padding:70px 7%;
 }
@@ -137,8 +136,23 @@ body{
 .section p{
   color:#475569;
   line-height:1.7;
-  max-width:880px;
+  max-width:900px;
   font-size:1rem;
+}
+
+.catalog-showcase{
+  margin-top:34px;
+  background:white;
+  border:1px solid #e2e8f0;
+  border-radius:22px;
+  padding:18px;
+  box-shadow:0 18px 45px rgba(15,23,42,.08);
+}
+
+.catalog-showcase img{
+  width:100%;
+  display:block;
+  border-radius:16px;
 }
 
 .grid{
@@ -176,13 +190,9 @@ body{
   border-top:4px solid #d2b48c;
 }
 
-.badge h2{
-  color:white;
-}
+.badge h2{color:white}
 
-.badge p{
-  color:#dbe4ee;
-}
+.badge p{color:#dbe4ee}
 
 .linkedin-badge{
   display:inline-block;
@@ -196,7 +206,7 @@ body{
 }
 
 .portal{
-  background:#ffffff;
+  background:white;
   border-top:1px solid #ddd6cc;
 }
 
@@ -258,9 +268,7 @@ body{
 }
 
 @media(max-width:900px){
-  .menu-toggle{
-    display:block;
-  }
+  .menu-toggle{display:block}
 
   .nav{
     display:none;
@@ -280,9 +288,7 @@ body{
     gap:16px;
   }
 
-  .nav a{
-    margin-left:0;
-  }
+  .nav a{margin-left:0}
 
   .buttons{
     flex-direction:column;
@@ -297,7 +303,7 @@ body{
 
 @media(max-width:800px){
   .hero{padding-top:70px}
-  .brand-title{font-size:1.7rem}
+  .brand-title{font-size:1.45rem}
   .brand img{width:50px;height:50px}
 }
 
@@ -323,7 +329,7 @@ body{
   object-fit:contain;
   animation:spin 2.5s linear infinite;
 }
- 
+
 @keyframes spin{
   from{transform:rotate(0deg)}
   to{transform:rotate(360deg)}
@@ -342,19 +348,8 @@ body{
     <img src="paned-logo.png" alt="PanED Logo">
 
     <div>
-      <div class="brand-title">
-        PanED
-      </div>
-
-      <div style="
-        font-size:.72rem;
-        letter-spacing:.18em;
-        font-weight:700;
-        opacity:.88;
-        margin-top:3px;
-      ">
-        BOUNDLESS EDUCATION
-      </div>
+      <div class="brand-title">PanorOmics Online</div>
+      <div class="brand-subtitle">POWERED BY PANED • BOUNDLESS EDUCATION</div>
     </div>
   </a>
 
@@ -371,39 +366,32 @@ body{
 </header>
 
 <section class="hero">
-  <div class="kicker">PANED ONLINE EDUCATION PLATFORM</div>
+  <div class="kicker">PANOROMICS ONLINE LEARNING</div>
 
-  <h1>Omics 101 Series<br>for the AI Biology Era</h1>
+  <h1>Learn. Practice. Apply. Advance.</h1>
 
   <p>
-    PanED delivers modern, systems-level Omics Sciences education for learners,
-    researchers, healthcare professionals, biotechnology teams, and institutions
-    seeking accessible training in genomics, transcriptomics, epigenomics,
-    proteomics, metabolomics, lipidomics, AI biology, and scientific writing.
+    Free, self-paced foundational training in Omics Sciences, AI Biology,
+    Biotechnology, and the Life Sciences — powered by PanED.
   </p>
 
   <div class="buttons">
-    <a class="primary" href="#courses">Explore 101 Courses</a>
-    <a class="secondary" href="#portal">Learner Portal</a>
+    <a href="#courses">Explore 101 Courses</a>
+    <a href="#portal">Learner Portal</a>
   </div>
 </section>
 
 <section class="section" id="courses">
-  <h2>PanED 101 Series</h2>
+  <h2>Omics 101 Series</h2>
 
   <p>
-    Foundational, selective, and professionally structured courses designed
-    for modern Omics Sciences education across biotechnology, healthcare,
-    academic, and lifelong-learning settings.
+    The seven foundational Omics Sciences pillars of systems biology:
+    genomics, transcriptomics, epigenomics, proteomics, metabolomics,
+    lipidomics, and microbiomics.
   </p>
 
-  <div class="grid">
-    <div class="card"><h3>Genomics 101</h3><p>DNA, genome sequencing, variation, and precision medicine foundations.</p></div>
-    <div class="card"><h3>Transcriptomics 101</h3><p>RNA expression, gene regulation, bulk RNA-seq, and single-cell concepts.</p></div>
-    <div class="card"><h3>Epigenomics 101</h3><p>DNA methylation, chromatin dynamics, histone marks, and regulatory biology.</p></div>
-    <div class="card"><h3>Proteomics 101</h3><p>Protein systems, pathways, biomarkers, and functional molecular biology.</p></div>
-    <div class="card"><h3>Metabolomics 101</h3><p>Metabolites, biochemical phenotypes, metabolism, and disease signatures.</p></div>
-    <div class="card"><h3>Lipidomics 101</h3><p>Lipid signaling, membrane biology, metabolism, and translational relevance.</p></div>
+  <div class="catalog-showcase">
+    <img src="paned-course-catalog-hero.png" alt="PanED Omics 101 course catalog">
   </div>
 </section>
 
@@ -433,24 +421,24 @@ body{
   <h2>All Courses</h2>
 
   <p>
-    Stand-alone courses will allow learners to explore individual topics in
-    Omics Sciences, AI biology, computational biology, translational biotechnology,
+    Stand-alone courses allow learners to explore individual topics in
+    Omics Sciences, AI Biology, computational biology, translational biotechnology,
     and scientific writing.
   </p>
 
   <div class="grid">
-    <div class="card"><h3>Genomics 101</h3><p>Stand-alone course.</p></div>
-    <div class="card"><h3>Transcriptomics 101</h3><p>Stand-alone course.</p></div>
-    <div class="card"><h3>Epigenomics 101</h3><p>Stand-alone course.</p></div>
-    <div class="card"><h3>Proteomics 101</h3><p>Stand-alone course.</p></div>
-    <div class="card"><h3>Metabolomics 101</h3><p>Stand-alone course.</p></div>
-    <div class="card"><h3>Lipidomics 101</h3><p>Stand-alone course.</p></div>
+    <div class="card"><h3>Genomics 101</h3><p>Self-paced stand-alone course.</p></div>
+    <div class="card"><h3>Transcriptomics 101</h3><p>Self-paced stand-alone course.</p></div>
+    <div class="card"><h3>Epigenomics 101</h3><p>Self-paced stand-alone course.</p></div>
+    <div class="card"><h3>Proteomics 101</h3><p>Self-paced stand-alone course.</p></div>
+    <div class="card"><h3>Metabolomics 101</h3><p>Self-paced stand-alone course.</p></div>
+    <div class="card"><h3>Lipidomics 101</h3><p>Self-paced stand-alone course.</p></div>
+    <div class="card"><h3>Microbiomics 101</h3><p>Self-paced stand-alone course.</p></div>
   </div>
 </section>
 
 <section class="section" id="badge">
   <div class="badge">
-
     <h2>PanED Digital Badge</h2>
 
     <p>
@@ -471,10 +459,7 @@ body{
       biotechnology, healthcare, pharmaceutical sciences, and research.
     </p>
 
-    <div class="linkedin-badge">
-      ✓ Share on LinkedIn
-    </div>
-
+    <div class="linkedin-badge">✓ Share on LinkedIn</div>
   </div>
 </section>
 
@@ -483,7 +468,8 @@ body{
 
   <p>
     The PanED portal will provide secure access to courses, assessments,
-    digital badges, certificates, and future workforce development programs.
+    digital badges, certificates, virtual labs, and future workforce development
+    programs.
   </p>
 
   <div class="portal-box">
@@ -493,9 +479,7 @@ body{
     <label>Password</label>
     <input type="password" placeholder="Enter your password">
 
-    <button class="portal-button">
-      Login Coming Soon
-    </button>
+    <button class="portal-button">Login Coming Soon</button>
 
     <p class="portal-note">
       Secure login, institutional access, and multi-factor authentication
@@ -505,7 +489,7 @@ body{
 </section>
 
 <footer class="footer">
-  PanED • Boundless Education • <a href="https://panoromics.org">PanorOmics</a>
+  PanorOmics Online • Powered by PanED • <a href="https://panoromics.org">PanorOmics</a>
 </footer>
 
 <script>
