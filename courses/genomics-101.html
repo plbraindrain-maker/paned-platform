@@ -1,511 +1,881 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>GEN-101 | Genomics 101 | PanorOmics Online</title>
 
 <style>
+
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
+
   font-family:Inter,Arial,sans-serif;
+
   background:#f7f4ef;
+
   color:#1f2933;
+
 }
 
 .header{
+
   background:#8c1515;
+
   color:white;
+
   padding:14px 7%;
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
+
   border-bottom:4px solid #d2b48c;
+
 }
 
 .brand{
+
   display:flex;
+
   align-items:center;
+
   gap:18px;
+
   color:white;
+
   text-decoration:none;
+
 }
 
 .brand img{
+
   width:64px;
+
   height:64px;
+
   object-fit:contain;
+
   background:white;
+
   border-radius:12px;
+
   padding:4px;
+
 }
 
 .brand-title{
+
   font-size:1.75rem;
+
   font-weight:900;
+
   line-height:1;
+
   letter-spacing:-0.04em;
+
 }
 
 .brand-subtitle{
+
   font-size:.80rem;
+
   letter-spacing:.10em;
+
   font-weight:700;
+
   opacity:.92;
+
   margin-top:6px;
+
 }
 
 .nav a{
+
   color:white;
+
   text-decoration:none;
+
   margin-left:24px;
+
   font-weight:700;
+
   font-size:.95rem;
+
 }
 
 .nav a:hover{color:#f6d365}
 
 .hero{
+
   padding:70px 7%;
+
   background:white;
+
   display:grid;
+
   grid-template-columns:1fr 1fr;
+
   gap:48px;
+
   align-items:center;
+
   border-bottom:1px solid #ddd6cc;
+
 }
 
 .hero img{
+
   width:100%;
+
   border-radius:24px;
+
   box-shadow:0 18px 45px rgba(15,23,42,.12);
+
 }
 
 .kicker{
+
   color:#8c1515;
+
   font-weight:900;
+
   letter-spacing:.20em;
+
   font-size:.78rem;
+
   margin-bottom:18px;
+
 }
 
 .hero h1{
+
   font-size:clamp(3rem,6vw,5rem);
+
   line-height:.95;
+
   letter-spacing:-.055em;
+
   margin-bottom:18px;
+
 }
 
 .course-code{
+
   font-size:1.5rem;
+
   font-weight:900;
+
   color:#64748b;
+
   margin-bottom:24px;
+
 }
 
 .hero p{
+
   font-size:1.08rem;
+
   line-height:1.75;
+
   color:#475569;
+
   max-width:720px;
+
 }
 
 .meta{
+
   margin-top:28px;
+
   display:grid;
+
   grid-template-columns:repeat(2,minmax(160px,1fr));
+
   gap:14px;
+
 }
 
 .meta-card{
+
   background:#f7f4ef;
+
   border:1px solid #ddd6cc;
+
   border-radius:16px;
+
   padding:18px;
+
 }
 
 .meta-card strong{
+
   display:block;
+
   color:#8c1515;
+
   margin-bottom:6px;
+
   font-size:.82rem;
+
   letter-spacing:.08em;
+
 }
 
 .section{
+
   padding:64px 7%;
+
 }
 
 .section h2{
+
   font-size:2.35rem;
+
   margin-bottom:16px;
+
   letter-spacing:-.04em;
+
 }
 
 .section p{
+
   color:#475569;
+
   line-height:1.75;
+
   max-width:920px;
+
 }
 
 .grid{
+
   margin-top:30px;
+
   display:grid;
+
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
   gap:20px;
+
 }
 
 .card{
+
   background:white;
+
   border:1px solid #e2e8f0;
+
   border-radius:18px;
+
   padding:24px;
+
   box-shadow:0 10px 28px rgba(15,23,42,.04);
+
 }
 
 .card h3{
+
   color:#8c1515;
+
   margin-bottom:10px;
+
   font-size:1.18rem;
+
 }
 
 .card p{
+
   font-size:.95rem;
+
 }
 
 .modules{
+
   display:grid;
+
   gap:18px;
+
   margin-top:30px;
+
 }
 
 .module{
+
   background:white;
+
   border:1px solid #e2e8f0;
+
   border-radius:18px;
+
   padding:24px;
+
   box-shadow:0 8px 24px rgba(15,23,42,.04);
+
 }
 
 .module-top{
+
   display:flex;
+
   justify-content:space-between;
+
   gap:20px;
+
   flex-wrap:wrap;
+
   margin-bottom:10px;
+
 }
 
 .module h3{
+
   color:#8c1515;
+
   font-size:1.25rem;
+
 }
 
 .module span{
+
   color:#64748b;
+
   font-weight:800;
+
 }
 
 .module ul{
+
   margin-top:14px;
+
   padding-left:20px;
+
   color:#475569;
+
   line-height:1.8;
+
 }
 
 .cta{
+
   background:#111827;
+
   color:white;
+
   border-radius:24px;
+
   padding:42px;
+
   margin-top:30px;
+
   border-top:4px solid #d2b48c;
+
 }
 
 .cta h2{color:white}
 
 .cta p{
+
   color:#dbe4ee;
+
   margin-top:12px;
+
 }
 
 .button{
+
   display:inline-block;
+
   margin-top:24px;
+
   padding:15px 28px;
+
   background:#8c1515;
+
   color:white;
+
   border-radius:999px;
+
   text-decoration:none;
+
   font-weight:900;
+
 }
 
 .footer{
+
   padding:34px 7%;
+
   background:#8c1515;
+
   color:white;
+
   text-align:center;
+
   font-size:.92rem;
+
 }
 
 .footer-powered{
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   gap:12px;
+
   flex-wrap:wrap;
+
 }
 
 .footer-powered img{
+
   width:42px;
+
   height:42px;
+
   object-fit:contain;
+
   background:white;
+
   border-radius:8px;
+
   padding:4px;
+
 }
 
 @media(max-width:900px){
+
   .hero{
+
     grid-template-columns:1fr;
+
     padding-top:50px;
+
   }
 
   .nav{display:none}
 
   .meta{
+
     grid-template-columns:1fr;
+
   }
+
 }
 
 @media(max-width:700px){
+
   .brand-title{font-size:1.45rem}
+
   .brand img{width:54px;height:54px}
+
   .brand-subtitle{font-size:.68rem}
+
 }
+
 </style>
+
 </head>
 
 <body>
 
 <header class="header">
+
   <a class="brand" href="../index.html">
+
     <img src="../panoromics-logo.png" alt="PanorOmics Logo">
+
     <div>
+
       <div class="brand-title">PanorOmics Online</div>
+
       <div class="brand-subtitle">LEARN • PRACTICE • APPLY • ADVANCE</div>
+
     </div>
+
   </a>
 
   <nav class="nav">
+
     <a href="../index.html">Home</a>
+
     <a href="../index.html#courses">Omics 101 Series</a>
+
     <a href="../index.html#all-courses">All Courses</a>
+
     <a href="../index.html#badge">Digital Badges</a>
+
     <a href="../index.html#portal">Portal</a>
+
   </nav>
+
 </header>
 
 <section class="hero">
+
   <div>
+
     <div class="kicker">FOUNDATIONAL OMICS SCIENCES SERIES</div>
+
     <h1>Genomics 101</h1>
+
     <div class="course-code">GEN-101</div>
 
     <p>
+
       GEN-101 is a free introductory genomics course for complete beginners.
+
       In this course, learners move from understanding what a genome is to seeing
+
       how genomics is transforming medicine, cancer research, sequencing
+
       technologies, precision medicine, and AI biology.
+
     </p>
 
     <div class="meta">
+
       <div class="meta-card"><strong>FORMAT</strong>Self-paced</div>
+
       <div class="meta-card"><strong>TIME COMMITMENT</strong>3–4 hours</div>
+
       <div class="meta-card"><strong>LEVEL</strong>Beginner</div>
+
       <div class="meta-card"><strong>CERTIFICATE</strong>Completion certificate</div>
+
     </div>
+
   </div>
 
   <img src="../genomics-101-hero.png" alt="Genomics 101 course hero image">
+
 </section>
 
 <section class="section">
+
   <h2>Course Overview</h2>
+
   <p>
+
     This course introduces the foundations of genomics in plain language while
+
     connecting learners to real-world applications in medicine, biotechnology,
+
     cancer genomics, sequencing, and artificial intelligence. It is designed as
+
     a free entry point into the PanorOmics Online genomics learning pathway.
+
   </p>
 
   <div class="grid">
+
     <div class="card">
+
       <h3>Who Should Take This Course?</h3>
+
       <p>Students, healthcare professionals, biotechnology learners, patients, career changers, and anyone curious about genomics.</p>
+
     </div>
 
     <div class="card">
+
       <h3>What You Will Earn</h3>
+
       <p>A PanorOmics Online completion certificate after passing the final assessment.</p>
+
     </div>
 
     <div class="card">
+
       <h3>Learning Pathway</h3>
+
       <p>GEN-101 introduces learners to future paid courses in genomics, cancer genomics, and advanced AI-driven genomics.</p>
+
     </div>
+
   </div>
+
 </section>
 
 <section class="section">
+
   <h2>What You Will Learn</h2>
 
   <div class="grid">
+
     <div class="card"><h3>Define Genomics</h3><p>Understand genomics and how it differs from genetics.</p></div>
+
     <div class="card"><h3>Understand Genome Structure</h3><p>Learn about DNA, genes, chromosomes, and non-coding regions.</p></div>
+
     <div class="card"><h3>Explore Sequencing</h3><p>Compare Sanger sequencing, next-generation sequencing, and long-read sequencing.</p></div>
+
     <div class="card"><h3>Connect to Medicine</h3><p>See how genomics supports precision medicine, cancer treatment, and pharmacogenomics.</p></div>
+
     <div class="card"><h3>Meet AI Biology</h3><p>Discover AlphaFold2, DNA language models, and the future of genomics in the AI era.</p></div>
+
     <div class="card"><h3>Prepare for Advanced Study</h3><p>Build a foundation for paid genomics, cancer genomics, and advanced omics courses.</p></div>
+
   </div>
+
 </section>
 
 <section class="section">
+
   <h2>Course Modules</h2>
 
   <div class="modules">
 
     <div class="module">
+
       <div class="module-top">
+
         <h3>Module 1 — What is Genomics?</h3>
+
         <span>3 Lessons</span>
+
       </div>
+
       <p>Introduces the big picture of genomics and why the Human Genome Project changed science.</p>
+
       <ul>
+
         <li>Genomics — The Big Picture</li>
+
         <li>A Brief History of Genomics</li>
+
         <li>Why Genomics Matters — For You</li>
+
       </ul>
+
     </div>
 
     <div class="module">
+
       <div class="module-top">
+
         <h3>Module 2 — Genes, Genomes, and Chromosomes</h3>
+
         <span>3 Lessons</span>
+
       </div>
+
       <p>Builds a clear mental model of how genetic information is organized.</p>
+
       <ul>
+
         <li>The Genome — Size, Structure, and Scope</li>
+
         <li>What is a Gene?</li>
+
         <li>Reading the Genome — Databases and Reference Sequences</li>
+
       </ul>
+
     </div>
 
     <div class="module">
+
       <div class="module-top">
+
         <h3>Module 3 — DNA Structure and Gene Expression</h3>
+
         <span>3 Lessons</span>
+
       </div>
+
       <p>Introduces DNA structure, the central dogma, and gene regulation.</p>
+
       <ul>
+
         <li>The Double Helix — DNA Structure</li>
+
         <li>From DNA to Protein — The Central Dogma</li>
+
         <li>Gene Regulation — Not All Genes Are On All the Time</li>
+
       </ul>
+
     </div>
 
     <div class="module">
+
       <div class="module-top">
+
         <h3>Module 4 — Genetic Variation</h3>
+
         <span>3 Lessons</span>
+
       </div>
+
       <p>Explains human genetic variation and how variants relate to health and disease.</p>
+
       <ul>
+
         <li>Types of Genetic Variation</li>
+
         <li>How Variation Causes Disease</li>
+
         <li>Finding Disease Variants — GWAS and Variant Databases</li>
+
       </ul>
+
     </div>
 
     <div class="module">
+
       <div class="module-top">
+
         <h3>Module 5 — Sequencing Technologies</h3>
+
         <span>3 Lessons</span>
+
       </div>
+
       <p>Shows how scientists read DNA using Sanger, NGS, and long-read sequencing.</p>
+
       <ul>
+
         <li>Sanger Sequencing — The Original Method</li>
+
         <li>Next-Generation Sequencing — The Revolution</li>
+
         <li>Long-Read Sequencing and the Future</li>
+
       </ul>
+
     </div>
 
     <div class="module">
+
       <div class="module-top">
+
         <h3>Module 6 — Genomics and Precision Medicine</h3>
+
         <span>3 Lessons</span>
+
       </div>
+
       <p>Connects genomics to cancer treatment, rare disease diagnosis, and medications.</p>
+
       <ul>
+
         <li>What is Precision Medicine?</li>
+
         <li>Cancer Genomics — Reading Tumor DNA</li>
+
         <li>Pharmacogenomics — Your DNA and Your Medications</li>
+
       </ul>
+
     </div>
 
     <div class="module">
+
       <div class="module-top">
+
         <h3>Module 7 — Genomics in the AI Biology Era</h3>
+
         <span>3 Lessons</span>
+
       </div>
+
       <p>Introduces AlphaFold2, DNA language models, foundation models, and future genomics technologies.</p>
+
       <ul>
+
         <li>AlphaFold2 — AI Solves the Protein Folding Problem</li>
+
         <li>DNA Language Models and Foundation Models for Biology</li>
+
         <li>The Future of Genomics — Where Is This Going?</li>
+
       </ul>
+
     </div>
 
   </div>
+
 </section>
 
 <section class="section">
+
   <h2>Final Assessment</h2>
+
   <p>
+
     The GEN-101 final assessment includes 21 multiple-choice questions covering
+
     all seven modules. Learners who score 70% or higher receive a PanorOmics
+
     Online completion certificate.
+
   </p>
 
   <div class="grid">
+
     <div class="card"><h3>Questions</h3><p>21 multiple-choice questions</p></div>
+
     <div class="card"><h3>Passing Score</h3><p>70% or higher</p></div>
+
     <div class="card"><h3>Attempts</h3><p>Unlimited retries</p></div>
+
     <div class="card"><h3>Certificate</h3><p>Downloadable completion certificate</p></div>
+
   </div>
+
 </section>
 
 <section class="section">
+
   <div class="cta">
+
     <h2>Continue Your Genomics Learning Pathway</h2>
+
     <p>
+
       GEN-101 gives learners the foundation. Future PanorOmics Online courses
+
       will expand into hands-on genomics, cancer genomics, TCGA data analysis,
+
       variant interpretation, AI biology, and advanced omics workflows.
+
     </p>
+
     <a class="button" href="../index.html#courses">Back to Omics 101 Series</a>
+
   </div>
+
 </section>
 
 <footer class="footer">
+
   <div class="footer-powered">
+
     <span>PanorOmics Online</span>
+
     <span>•</span>
+
     <span>Powered by PanED</span>
+
     <img src="../paned-logo.png" alt="PanED Logo">
+
     <span>Boundless Education</span>
+
   </div>
+
 </footer>
 
 </body>
+
 </html>
