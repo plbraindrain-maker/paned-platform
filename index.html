@@ -1,11 +1,13 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>PanorOmics Online | Omics Sciences Education</title>
+
 <link rel="icon" type="image/png" href="panoromics-logo.png">
 <link rel="apple-touch-icon" href="panoromics-logo.png">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
@@ -159,8 +161,79 @@ body{
 .grid{
   margin-top:34px;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:22px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+}
+
+.course-card{
+  background:white;
+  border:1px solid #e2e8f0;
+  border-radius:20px;
+  overflow:hidden;
+  text-decoration:none;
+  display:block;
+  box-shadow:0 12px 32px rgba(15,23,42,.06);
+  transition:.25s ease;
+}
+
+.course-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 48px rgba(15,23,42,.12);
+}
+
+.course-card img{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  display:block;
+}
+
+.course-body{
+  padding:22px;
+}
+
+.course-body h3{
+  color:#8c1515;
+  margin-bottom:8px;
+  font-size:1.25rem;
+  line-height:1.25;
+}
+
+.course-code{
+  color:#475569;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.course-desc{
+  color:#64748b;
+  font-size:.92rem;
+  line-height:1.55;
+}
+
+.status{
+  display:inline-block;
+  margin-top:16px;
+  padding:7px 12px;
+  border-radius:999px;
+  font-size:.76rem;
+  font-weight:900;
+  letter-spacing:.06em;
+  background:#f7f4ef;
+  color:#8c1515;
+  border:1px solid #ddd6cc;
+}
+
+.status.open{
+  background:#ecfdf5;
+  color:#047857;
+  border-color:#a7f3d0;
+}
+
+.status.pilot{
+  background:#fff7ed;
+  color:#c2410c;
+  border-color:#fed7aa;
 }
 
 .card{
@@ -182,12 +255,6 @@ body{
 .card p{
   font-size:.95rem;
   color:#475569;
-}
-
-.card:hover{
-  transform:translateY(-3px);
-  transition:.25s ease;
-  box-shadow:0 18px 42px rgba(15,23,42,.08);
 }
 
 .badge{
@@ -343,9 +410,10 @@ body{
   padding:4px;
 }
 
-.footer a{
-  color:white;
-  font-weight:700;
+.footer-copy{
+  margin-top:16px;
+  font-size:.82rem;
+  opacity:.9;
 }
 
 @media(max-width:900px){
@@ -427,21 +495,18 @@ body{
 <header class="header">
   <a class="brand" href="/">
     <img src="panoromics-logo.png" alt="PanorOmics Logo">
-
     <div>
-  <div class="brand-title">PanorOmics Online</div>
-  <div class="brand-subtitle">
-    LEARN • PRACTICE • APPLY • ADVANCE
-  </div>
-</div>
-</a>
+      <div class="brand-title">PanorOmics Online</div>
+      <div class="brand-subtitle">LEARN • PRACTICE • APPLY • ADVANCE</div>
+    </div>
+  </a>
 
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
   <nav class="nav" id="navMenu">
-    <a href="#courses">Courses</a>
-    <a href="#programs">Programs</a>
-    <a href="#all-courses">All Courses</a>
+    <a href="#courses">Omics 101</a>
+    <a href="#advanced-courses">Advanced Courses</a>
+    <a href="#certificate">Certificate</a>
     <a href="#badge">Digital Badges</a>
     <a href="#portal">Portal</a>
     <a href="https://panoromics.org">PanorOmics</a>
@@ -454,13 +519,15 @@ body{
   <h1>Learn. Practice. Apply. Advance.</h1>
 
   <p>
-    Free, self-paced foundational training in Omics Sciences, AI Biology,
-    Biotechnology, and the Life Sciences.
+    Accessible, high-quality education in Omics Sciences, AI Biology,
+    Biotechnology, translational research, and innovation — designed for the
+    modern life sciences era.
   </p>
 
   <div class="buttons">
-    <a href="#courses">Explore 101 Courses</a>
-    <a href="#portal">Learner Portal</a>
+    <a href="#courses">Explore Omics 101</a>
+    <a href="#advanced-courses">Advanced Courses</a>
+    <a href="#certificate">Graduate Certificate</a>
   </div>
 </section>
 
@@ -468,93 +535,238 @@ body{
   <h2>Omics 101 Series</h2>
 
   <p>
-    The seven foundational Omics Sciences pillars of systems biology:
-    genomics, transcriptomics, epigenomics, proteomics, metabolomics,
-    lipidomics, and microbiomics.
+    Free foundational courses introducing the seven core pillars of Omics Sciences:
+    genomics, transcriptomics, epigenomics, proteomics, metabolomics, lipidomics,
+    and microbiomics.
   </p>
 
   <div class="catalog-showcase">
     <img src="paned-course-catalog-hero.png" alt="PanorOmics Online Omics 101 course catalog">
   </div>
-  <div class="grid">
-
-  <a class="card" href="courses/genomics-101.html">
-    <h3>Genomics 101</h3>
-    <p>GEN-101 • Open Enrollment</p>
-  </a>
-
-  <a class="card" href="#">
-    <h3>Transcriptomics 101</h3>
-    <p>TRN-101 • Coming Soon</p>
-  </a>
-
-  <a class="card" href="#">
-    <h3>Epigenomics 101</h3>
-    <p>EPI-101 • Coming Soon</p>
-  </a>
-
-  <a class="card" href="#">
-    <h3>Proteomics 101</h3>
-    <p>PRO-101 • Coming Soon</p>
-  </a>
-
-  <a class="card" href="#">
-    <h3>Metabolomics 101</h3>
-    <p>MET-101 • Coming Soon</p>
-  </a>
-
-  <a class="card" href="#">
-    <h3>Lipidomics 101</h3>
-    <p>LIP-101 • Coming Soon</p>
-  </a>
-
-  <a class="card" href="#">
-    <h3>Microbiomics 101</h3>
-    <p>MIC-101 • Coming Soon</p>
-  </a>
-
-</div>
-</section>
-
-<section class="section" id="programs">
-  <h2>Explore Our Programs</h2>
-
-  <p>
-    Future programs will support learners seeking structured pathways in
-    Omics Sciences, biotechnology, healthcare innovation, and scientific workforce
-    development.
-  </p>
 
   <div class="grid">
-    <div class="card">
-      <h3>Graduate Certificates</h3>
-      <p>Coming soon.</p>
-    </div>
+    <a class="course-card" href="courses/genomics-101.html">
+      <img src="genomics-101-hero.png" alt="Genomics 101">
+      <div class="course-body">
+        <h3>Genomics 101</h3>
+        <div class="course-code">GEN-101</div>
+        <p class="course-desc">Foundational introduction to genomes, genes, sequencing, precision medicine, and AI biology.</p>
+        <span class="status pilot">PILOT COURSE</span>
+      </div>
+    </a>
 
-    <div class="card">
-      <h3>Professional Programs</h3>
-      <p>Coming soon.</p>
-    </div>
+    <a class="course-card" href="#">
+      <img src="transcriptomics-101-hero.png" alt="Transcriptomics 101">
+      <div class="course-body">
+        <h3>Transcriptomics 101</h3>
+        <div class="course-code">TRN-101</div>
+        <p class="course-desc">Introduction to RNA, gene expression, transcriptome analysis, and biological regulation.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="epigenomics-101-hero.png" alt="Epigenomics 101">
+      <div class="course-body">
+        <h3>Epigenomics 101</h3>
+        <div class="course-code">EPI-101</div>
+        <p class="course-desc">Foundations of DNA methylation, histones, chromatin, and regulation of gene activity.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="proteomics-101-hero.png" alt="Proteomics 101">
+      <div class="course-body">
+        <h3>Proteomics 101</h3>
+        <div class="course-code">PRO-101</div>
+        <p class="course-desc">Introduction to proteins, protein function, mass spectrometry, and biological pathways.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="metabolomics-101-hero.png" alt="Metabolomics 101">
+      <div class="course-body">
+        <h3>Metabolomics 101</h3>
+        <div class="course-code">MET-101</div>
+        <p class="course-desc">Foundations of metabolites, cellular metabolism, pathway analysis, and biomarker discovery.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="lipidomics-101-hero.png" alt="Lipidomics 101">
+      <div class="course-body">
+        <h3>Lipidomics 101</h3>
+        <div class="course-code">LIP-101</div>
+        <p class="course-desc">Introduction to lipids, membranes, lipid signaling, and lipid biology in health and disease.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="microbiomics-101-hero.png" alt="Microbiomics 101">
+      <div class="course-body">
+        <h3>Microbiomics 101</h3>
+        <div class="course-code">MIC-101</div>
+        <p class="course-desc">Introduction to microbiomes, microbial communities, host interactions, and health impact.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
   </div>
 </section>
 
-<section class="section" id="all-courses">
-  <h2>All Courses</h2>
+<section class="section" id="advanced-courses">
+  <h2>Advanced Omics Courses</h2>
 
   <p>
-    Stand-alone courses allow learners to explore individual topics in
-    Omics Sciences, AI Biology, computational biology, translational biotechnology,
-    and scientific writing.
+    Graduate-level stand-alone courses for learners seeking deeper scientific,
+    computational, translational, and applied training across Omics Sciences.
   </p>
 
   <div class="grid">
-    <a class="card" href="/courses/genomics-101"><h3>Genomics 101</h3><p>GEN-101 • Self-paced stand-alone course.</p></a>
-    <a class="card" href="/courses/transcriptomics-101"><h3>Transcriptomics 101</h3><p>TRN-101 • Self-paced stand-alone course.</p></a>
-    <a class="card" href="/courses/epigenomics-101"><h3>Epigenomics 101</h3><p>EPI-101 • Self-paced stand-alone course.</p></a>
-    <a class="card" href="/courses/proteomics-101"><h3>Proteomics 101</h3><p>PRO-101 • Self-paced stand-alone course.</p></a>
-    <a class="card" href="/courses/metabolomics-101"><h3>Metabolomics 101</h3><p>MET-101 • Self-paced stand-alone course.</p></a>
-    <a class="card" href="/courses/lipidomics-101"><h3>Lipidomics 101</h3><p>LIP-101 • Self-paced stand-alone course.</p></a>
-    <a class="card" href="/courses/microbiomics-101"><h3>Microbiomics 101</h3><p>MIC-101 • Self-paced stand-alone course.</p></a>
+    <a class="course-card" href="#">
+      <img src="osc-710-genomics.png" alt="OSC-710 Genomics">
+      <div class="course-body">
+        <h3>OSC-710 Genomics</h3>
+        <div class="course-code">3 Credits</div>
+        <p class="course-desc">Genome organization, NGS technologies, variant calling, GWAS, polygenic risk scores, and functional genomics.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="osc-711-transcriptomics.png" alt="OSC-711 Transcriptomics">
+      <div class="course-body">
+        <h3>OSC-711 Transcriptomics</h3>
+        <div class="course-code">3 Credits</div>
+        <p class="course-desc">RNA-seq, DESeq2, WGCNA, lncRNA networks, immune deconvolution, alternative splicing, and biomarkers.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="osc-712-proteomics.png" alt="OSC-712 Proteomics">
+      <div class="course-body">
+        <h3>OSC-712 Proteomics</h3>
+        <div class="course-code">3 Credits</div>
+        <p class="course-desc">LC-MS/MS, quantitative proteomics, phosphoproteomics, protein networks, and clinical proteomics.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="osc-713-metabolomics.png" alt="OSC-713 Metabolomics">
+      <div class="course-body">
+        <h3>OSC-713 Metabolomics</h3>
+        <div class="course-code">3 Credits</div>
+        <p class="course-desc">NMR and LC-MS metabolomics, targeted and untargeted approaches, pathway analysis, and biomarkers.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="osc-714-epigenomics.png" alt="OSC-714 Epigenomics">
+      <div class="course-body">
+        <h3>OSC-714 Epigenomics</h3>
+        <div class="course-code">3 Credits</div>
+        <p class="course-desc">DNA methylation, histone modifications, ATAC-seq, ChIP-seq, Hi-C, and EZH2/PRC2 mechanisms.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="osc-715-metagenomics.png" alt="OSC-715 Metagenomics">
+      <div class="course-body">
+        <h3>OSC-715 Metagenomics</h3>
+        <div class="course-code">3 Credits</div>
+        <p class="course-desc">16S rRNA, shotgun metagenomics, QIIME2, diversity analysis, HUMAnN3, and host-microbiome studies.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="osc-716-lipidomics.png" alt="OSC-716 Lipidomics">
+      <div class="course-body">
+        <h3>OSC-716 Lipidomics</h3>
+        <div class="course-code">3 Credits</div>
+        <p class="course-desc">LC-MS lipidomics, LIPID MAPS, lipid pathways, ferroptosis, and lipid dysregulation in disease.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="osc-717-microbiomics.png" alt="OSC-717 Microbiomics">
+      <div class="course-body">
+        <h3>OSC-717 Microbiomics</h3>
+        <div class="course-code">3 Credits</div>
+        <p class="course-desc">Viromics, mycobiomics, archaea, phage-bacteria dynamics, FMT, microbiome engineering, and immune crosstalk.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="section" id="certificate">
+  <h2>Graduate Certificate</h2>
+
+  <p>
+    Graduate Certificate in Omics Entrepreneurship, Translation, and Biotechnology
+    Innovation. A 15-credit pathway focused on translational omics, AI innovation,
+    diagnostics, commercialization, and biotechnology venture development.
+  </p>
+
+  <div class="grid">
+    <a class="course-card" href="#">
+      <img src="osc-751-translational-omics-research-and-biotechnology-innovation.png" alt="OSC-751 Translational Omics Research and Biotechnology Innovation">
+      <div class="course-body">
+        <h3>OSC-751 Translational Omics Research and Biotechnology Innovation</h3>
+        <div class="course-code">3 Credits</div>
+        <p class="course-desc">Bench-to-clinic translation, biomarkers, liquid biopsy systems, companion diagnostics, and T0-T4 frameworks.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="osc-752-artificial-intelligence-and-computational-innovation-in-omics.png" alt="OSC-752 Artificial Intelligence and Computational Innovation in Omics">
+      <div class="course-body">
+        <h3>OSC-752 Artificial Intelligence and Computational Innovation in Omics</h3>
+        <div class="course-code">3 Credits</div>
+        <p class="course-desc">Protein language models, multimodal AI, digital pathology, biomedical data infrastructure, and precision medicine ecosystems.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="osc-753-regulatory-affairs-clinical-validation-and-omics-diagnostics.png" alt="OSC-753 Regulatory Affairs Clinical Validation and Omics Diagnostics">
+      <div class="course-body">
+        <h3>OSC-753 Regulatory Affairs, Clinical Validation, and Omics Diagnostics</h3>
+        <div class="course-code">3 Credits</div>
+        <p class="course-desc">CLIA, CAP, FDA biomarker qualification, analytical validation, clinical diagnostics, and ethical governance.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="osc-754-biotechnology-entrepreneurship-and-omics-commercialization.png" alt="OSC-754 Biotechnology Entrepreneurship and Omics Commercialization">
+      <div class="course-body">
+        <h3>OSC-754 Biotechnology Entrepreneurship and Omics Commercialization</h3>
+        <div class="course-code">3 Credits</div>
+        <p class="course-desc">IP strategy, startup formation, venture capital, translational funding, licensing, and technology transfer.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
+
+    <a class="course-card" href="#">
+      <img src="osc-755-biotechnology-innovation-capstone.png" alt="OSC-755 Biotechnology Innovation Capstone">
+      <div class="course-body">
+        <h3>OSC-755 Biotechnology Innovation Capstone</h3>
+        <div class="course-code">3 Credits</div>
+        <p class="course-desc">Team-based omics innovation concept, translational strategy, regulatory planning, commercialization feasibility, and investor-style pitch.</p>
+        <span class="status">COMING SOON</span>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -563,14 +775,13 @@ body{
     <h2>PanorOmics Online Digital Badges</h2>
 
     <p>
-      Learners complete structured modules, short assessments, and applied
-      learning checkpoints before earning a digital badge for each completed course.
+      Learners complete structured modules, assessments, and applied learning
+      checkpoints before earning digital badges and future certificates.
     </p>
 
     <p style="margin-top:18px;">
-      Digital badges provide a verifiable record of learning and can be
-      showcased on LinkedIn, digital portfolios, resumes, personal websites,
-      and professional profiles.
+      Digital badges provide a verifiable record of learning and can be showcased
+      on LinkedIn, digital portfolios, resumes, personal websites, and professional profiles.
     </p>
 
     <div class="linkedin-badge">✓ Share on LinkedIn</div>
@@ -582,8 +793,7 @@ body{
 
   <p>
     The learner portal will provide secure access to courses, assessments,
-    digital badges, certificates, virtual labs, and future workforce development
-    programs.
+    digital badges, certificates, virtual labs, and future workforce development programs.
   </p>
 
   <div class="portal-box">
@@ -608,13 +818,13 @@ body{
       <p>
         Planned account security includes email verification, password reset,
         Cloudflare Turnstile proof-of-human check, authenticator app support,
-        Duo Mobile support, and institutional access options.
+        Duo Mobile support, session expiration, and institutional access options.
       </p>
     </div>
 
     <p class="portal-note">
-      Create account, secure login, multi-factor authentication, and institutional access
-      will be added in a future release.
+      Create account, secure login, enrollment tracking, progress tracking,
+      certificates, and multi-factor authentication will be added in a future release.
     </p>
   </div>
 </section>
@@ -626,6 +836,10 @@ body{
     <span>Powered by PanED</span>
     <img src="paned-logo.png" alt="PanED Logo">
     <span>Boundless Education</span>
+  </div>
+
+  <div class="footer-copy">
+    © 2026 PanorOmics. All Rights Reserved.
   </div>
 </footer>
 
