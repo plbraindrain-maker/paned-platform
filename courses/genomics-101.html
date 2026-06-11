@@ -111,18 +111,35 @@ body{
   max-width:720px;
 }
 
-.meta{
+.course-facts{
   margin-top:28px;
-  display:grid;
-  grid-template-columns:repeat(2,minmax(160px,1fr));
-  gap:14px;
-}
-
-.meta-card{
   background:#f7f4ef;
   border:1px solid #ddd6cc;
-  border-radius:12px;
-  padding:14px;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.fact-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 24px;
+  border-bottom:1px solid #ddd6cc;
+}
+
+.fact-row:last-child{
+  border-bottom:none;
+}
+
+.fact-label{
+  font-weight:800;
+  color:#8c1515;
+  font-size:1rem;
+}
+
+.fact-value{
+  font-weight:600;
+  color:#1f2933;
 }
 
 .meta-card strong{
@@ -344,15 +361,39 @@ body{
       sequencing technologies, precision medicine, cancer genomics, and AI biology.
     </p>
 
-    <div class="meta">
-      <div class="meta-card"><strong>FORMAT</strong>Self-paced</div>
-      <div class="meta-card"><strong>TIME COMMITMENT</strong>3–4 hours</div>
-      <div class="meta-card"><strong>LEVEL</strong>Beginner</div>
-      <div class="meta-card"><strong>ACCESS</strong>Enrollment required</div>
-      <div class="meta-card"><strong>COST</strong>Free pilot course</div>
-      <div class="meta-card"><strong>CERTIFICATE</strong>Completion certificate</div>
-    </div>
+    <div class="course-facts">
+
+  <div class="fact-row">
+    <span class="fact-label">🖥️ Format</span>
+    <span class="fact-value">Self-paced</span>
   </div>
+
+  <div class="fact-row">
+    <span class="fact-label">⏱️ Time Commitment</span>
+    <span class="fact-value">3–4 hours</span>
+  </div>
+
+  <div class="fact-row">
+    <span class="fact-label">🎓 Level</span>
+    <span class="fact-value">Beginner</span>
+  </div>
+
+  <div class="fact-row">
+    <span class="fact-label">🔐 Access</span>
+    <span class="fact-value">Enrollment Required</span>
+  </div>
+
+  <div class="fact-row">
+    <span class="fact-label">💰 Cost</span>
+    <span class="fact-value">Free Pilot Course</span>
+  </div>
+
+  <div class="fact-row">
+    <span class="fact-label">📜 Credential</span>
+    <span class="fact-value">Completion Certificate</span>
+  </div>
+
+</div>
 
   <img src="../genomics-101-hero.png" alt="Genomics 101 course hero image">
 </section>
