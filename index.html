@@ -486,7 +486,60 @@ body{
   from{transform:rotate(0deg)}
   to{transform:rotate(360deg)}
 }
+  .footer-links{
+  margin-top:28px;
+  display:flex;
+  justify-content:center;
+  gap:36px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:white;
+  text-decoration:none;
+  font-weight:800;
+  font-size:1rem;
+}
+
+.footer-links a:hover{
+  color:#f6d365;
+}
+
+.footer-social-block{
+  margin-top:34px;
+  padding:34px 7% 26px;
+  background:#07111f;
+  margin-left:-7%;
+  margin-right:-7%;
+  margin-bottom:-34px;
+}
+
+.footer-social-title{
+  font-size:1.25rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  margin-bottom:24px;
+}
+
+.footer-social{
+  display:flex;
+  justify-content:center;
+  gap:34px;
+  flex-wrap:wrap;
+}
+
+.footer-social a{
+  color:#e5edf7;
+  font-size:2.1rem;
+  transition:.25s ease;
+}
+
+.footer-social a:hover{
+  color:#f6d365;
+  transform:translateY(-3px);
+}
 </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -835,43 +888,35 @@ body{
 <footer class="footer">
 
   <div class="footer-powered">
-
-    <a href="https://panoromics.org" style="color:white;text-decoration:none;">
-      PanorOmics Online
-    </a>
-
+    <a href="https://panoromics.org" style="color:white;text-decoration:none;">PanorOmics Online</a>
     <span>•</span>
-
     <span>Powered by PanED</span>
-
     <img src="paned-logo.png" alt="PanED Logo">
-
     <span>Boundless Education</span>
+  </div>
 
+  <div class="footer-links">
+    <a href="https://panoromics.org/about">About PanorOmics</a>
+    <a href="#">Instructor Login</a>
+    <a href="https://panoromics.org/policies">Policies</a>
+    <a href="https://panoromics.org/accessibility">Accessibility</a>
   </div>
 
   <div class="footer-copy">
+    © 2026 PanorOmics Online. All Rights Reserved.
+  </div>
 
-    <a href="https://panoromics.org/about" style="color:white;text-decoration:none;margin:0 12px;">
-      About PanorOmics
-    </a>
+  <div class="footer-social-block">
+    <div class="footer-social-title">FOLLOW US</div>
 
-    <a href="/instructor-login" style="color:white;text-decoration:none;margin:0 12px;">
-      Instructor Login
-    </a>
-
-    <a href="https://panoromics.org/policies" style="color:white;text-decoration:none;margin:0 12px;">
-      Policies
-    </a>
-
-    <a href="https://panoromics.org/accessibility" style="color:white;text-decoration:none;margin:0 12px;">
-      Accessibility
-    </a>
-
-    <br><br>
-
-    © 2026 PanorOmics Online • Powered by PanED • Boundless Education
-
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
   </div>
 
 </footer>
