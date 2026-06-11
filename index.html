@@ -161,7 +161,7 @@ body{
 .grid{
   margin-top:34px;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
   gap:24px;
 }
 
@@ -172,10 +172,14 @@ body{
   overflow:hidden;
   text-decoration:none;
   display:block;
+  color:inherit;
   box-shadow:0 12px 32px rgba(15,23,42,.06);
   transition:.25s ease;
 }
 
+.course-card:visited{
+  color:inherit;
+}
 .course-card:hover{
   transform:translateY(-4px);
   box-shadow:0 20px 48px rgba(15,23,42,.12);
@@ -183,8 +187,7 @@ body{
 
 .course-card img{
   width:100%;
-  aspect-ratio:16/9;
-  object-fit:cover;
+  height:auto;
   display:block;
 }
 
@@ -751,7 +754,7 @@ body{
     <a class="course-card" href="#">
       <img src="osc-754-biotechnology-entrepreneurship-and-omics-commercialization.png" alt="OSC-754 Biotechnology Entrepreneurship and Omics Commercialization">
       <div class="course-body">
-        <h3>OSC-754 Biotechnology Entrepreneurship and Omics Commercialization</h3>
+        <h3>OSC-754<br>Biotechnology Entrepreneurship<br>& Omics Commercialization</h3>
         <div class="course-code">3 Credits</div>
         <p class="course-desc">IP strategy, startup formation, venture capital, translational funding, licensing, and technology transfer.</p>
         <span class="status">COMING SOON</span>
